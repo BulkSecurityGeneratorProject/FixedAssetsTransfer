@@ -1,0 +1,40 @@
+
+{
+    "fixedAssetsTransferApp": {
+        "fixedAssets" : {
+            "home": {
+                "title": "Fixed Assets",
+                "createLabel": "Create a new Fixed Assets",
+                "createOrEditLabel": "Create or edit a Fixed Assets",
+                "search": "Search for Fixed Assets"
+            },
+            "created": "A new Fixed Assets is created with identifier {{ param }}",
+            "updated": "A Fixed Assets is updated with identifier {{ param }}",
+            "deleted": "A Fixed Assets is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fixed Assets {{ id }}?"
+            },
+            "detail": {
+                "title": "Fixed Assets"
+            },
+            "assets_no": "Assets No",
+            "serial_no": "Serial No",
+            "description": "Description",
+            "date": "Date",
+            "asset_action_type": "Asset Action Type",
+            "source": "Source",
+            "destination": "Destination",
+            "manager_approval": "Manager Approval",
+            "fixed_assets_manager_approval": "Fixed Assets Manager Approval",
+            "technical_review": "Technical Review",
+            "technical_commentary": "Technical Commentary",
+            "it_asset_previewer": "It Asset Previewer",
+            "it_asset_previewer_name": "It Asset Previewer Name",
+            "administraitve_affairs_previewer": "Administraitve Affairs Previewer",
+            "administraitive_affairs_job_name": "Administraitive Affairs Job Name",
+            "technical_maintenance_commentry": "Technical Maintenance Commentry",
+            "technical_maintenance_previewer": "Technical Maintenance Previewer",
+            "technical_maintenance_job_name": "Technical Maintenance Job Name"
+        }
+    }
+}

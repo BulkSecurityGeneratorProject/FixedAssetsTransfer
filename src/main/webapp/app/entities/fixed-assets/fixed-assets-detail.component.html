@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fixedAssets">
+            <h2><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.detail.title">Fixed Assets</span> {{fixedAssets.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.assets_no">Assets No</span></dt>
+                <dd>
+                    <span>{{fixedAssets.assets_no}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.serial_no">Serial No</span></dt>
+                <dd>
+                    <span>{{fixedAssets.serial_no}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.description">Description</span></dt>
+                <dd>
+                    <span>{{fixedAssets.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.date">Date</span></dt>
+                <dd>
+                    <span>{{fixedAssets.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.asset_action_type">Asset Action Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'fixedAssetsTransferApp.AssetActionType.' + fixedAssets.asset_action_type}}">{{fixedAssets.asset_action_type}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.source">Source</span></dt>
+                <dd>
+                    <span>{{fixedAssets.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.destination">Destination</span></dt>
+                <dd>
+                    <span>{{fixedAssets.destination}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.manager_approval">Manager Approval</span></dt>
+                <dd>
+                    <span>{{fixedAssets.manager_approval}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.fixed_assets_manager_approval">Fixed Assets Manager Approval</span></dt>
+                <dd>
+                    <span>{{fixedAssets.fixed_assets_manager_approval}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_review">Technical Review</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'fixedAssetsTransferApp.TechnicalReview.' + fixedAssets.technical_review}}">{{fixedAssets.technical_review}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_commentary">Technical Commentary</span></dt>
+                <dd>
+                    <span>{{fixedAssets.technical_commentary}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.it_asset_previewer">It Asset Previewer</span></dt>
+                <dd>
+                    <span>{{fixedAssets.it_asset_previewer}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.it_asset_previewer_name">It Asset Previewer Name</span></dt>
+                <dd>
+                    <span>{{fixedAssets.it_asset_previewer_name}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.administraitve_affairs_previewer">Administraitve Affairs Previewer</span></dt>
+                <dd>
+                    <span>{{fixedAssets.administraitve_affairs_previewer}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.administraitive_affairs_job_name">Administraitive Affairs Job Name</span></dt>
+                <dd>
+                    <span>{{fixedAssets.administraitive_affairs_job_name}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_commentry">Technical Maintenance Commentry</span></dt>
+                <dd>
+                    <span>{{fixedAssets.technical_maintenance_commentry}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_previewer">Technical Maintenance Previewer</span></dt>
+                <dd>
+                    <span>{{fixedAssets.technical_maintenance_previewer}}</span>
+                </dd>
+                <dt><span jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_job_name">Technical Maintenance Job Name</span></dt>
+                <dd>
+                    <span>{{fixedAssets.technical_maintenance_job_name}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fixed-assets', fixedAssets.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

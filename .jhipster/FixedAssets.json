@@ -1,0 +1,115 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "assets_no",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "serial_no",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "10"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "asset_action_type",
+            "fieldType": "AssetActionType",
+            "fieldValues": "DISPOSAL,RETURN,SALE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "5"
+        },
+        {
+            "fieldName": "destination",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "5"
+        },
+        {
+            "fieldName": "manager_approval",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fixed_assets_manager_approval",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "technical_review",
+            "fieldType": "TechnicalReview",
+            "fieldValues": "IT,ADMINSTRAITIVE_AFFAIRS,MAINTENANCE"
+        },
+        {
+            "fieldName": "technical_commentary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "it_asset_previewer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "it_asset_previewer_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "administraitve_affairs_previewer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "administraitive_affairs_job_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technical_maintenance_commentry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technical_maintenance_previewer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "technical_maintenance_job_name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180809081215",
+    "dto": "no",
+    "searchEngine": "elasticsearch",
+    "service": "no",
+    "entityTableName": "fixed_assets",
+    "jpaMetamodelFiltering": false,
+    "pagination": "yes"
+}

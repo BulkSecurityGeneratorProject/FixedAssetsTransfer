@@ -1,0 +1,10 @@
+{
+    "fixedAssetsTransferApp": {
+        "TechnicalReview" : {
+            "null": "",
+            "IT": "IT",
+            "ADMINSTRAITIVE_AFFAIRS": "ADMINSTRAITIVE_AFFAIRS",
+            "MAINTENANCE": "MAINTENANCE"
+        }
+    }
+}

@@ -1,0 +1,187 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-fixed-assets-heading" jhiTranslate="fixedAssetsTransferApp.fixedAssets.home.createOrEditLabel">Create or edit a Fixed Assets</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!fixedAssets.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="fixedAssets.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.assets_no" for="field_assets_no">Assets No</label>
+                    <input type="number" class="form-control" name="assets_no" id="field_assets_no"
+                        [(ngModel)]="fixedAssets.assets_no" required/>
+                    <div [hidden]="!(editForm.controls.assets_no?.dirty && editForm.controls.assets_no?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.assets_no?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.assets_no?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.serial_no" for="field_serial_no">Serial No</label>
+                    <input type="number" class="form-control" name="serial_no" id="field_serial_no"
+                        [(ngModel)]="fixedAssets.serial_no" required/>
+                    <div [hidden]="!(editForm.controls.serial_no?.dirty && editForm.controls.serial_no?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.serial_no?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.serial_no?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="fixedAssets.description" required minlength="10"/>
+                    <div [hidden]="!(editForm.controls.description?.dirty && editForm.controls.description?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.description?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.description?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 10 }">
+                        This field is required to be at least 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" [(ngModel)]="fixedAssets.date"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.date?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.asset_action_type" for="field_asset_action_type">Asset Action Type</label>
+                    <select class="form-control" name="asset_action_type" [(ngModel)]="fixedAssets.asset_action_type" id="field_asset_action_type"  required>
+                        <option value="DISPOSAL">{{'fixedAssetsTransferApp.AssetActionType.DISPOSAL' | translate}}</option>
+                        <option value="RETURN">{{'fixedAssetsTransferApp.AssetActionType.RETURN' | translate}}</option>
+                        <option value="SALE">{{'fixedAssetsTransferApp.AssetActionType.SALE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.asset_action_type?.dirty && editForm.controls.asset_action_type?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.asset_action_type?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.source" for="field_source">Source</label>
+                    <input type="text" class="form-control" name="source" id="field_source"
+                        [(ngModel)]="fixedAssets.source" required minlength="5"/>
+                    <div [hidden]="!(editForm.controls.source?.dirty && editForm.controls.source?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.source?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.source?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.destination" for="field_destination">Destination</label>
+                    <input type="text" class="form-control" name="destination" id="field_destination"
+                        [(ngModel)]="fixedAssets.destination" required minlength="5"/>
+                    <div [hidden]="!(editForm.controls.destination?.dirty && editForm.controls.destination?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.destination?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.destination?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.manager_approval" for="field_manager_approval">Manager Approval</label>
+                    <input type="checkbox" class="form-control" name="manager_approval" id="field_manager_approval"
+                        [(ngModel)]="fixedAssets.manager_approval" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.fixed_assets_manager_approval" for="field_fixed_assets_manager_approval">Fixed Assets Manager Approval</label>
+                    <input type="checkbox" class="form-control" name="fixed_assets_manager_approval" id="field_fixed_assets_manager_approval"
+                        [(ngModel)]="fixedAssets.fixed_assets_manager_approval" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_review" for="field_technical_review">Technical Review</label>
+                    <select class="form-control" name="technical_review" [(ngModel)]="fixedAssets.technical_review" id="field_technical_review" >
+                        <option value="IT">{{'fixedAssetsTransferApp.TechnicalReview.IT' | translate}}</option>
+                        <option value="ADMINSTRAITIVE_AFFAIRS">{{'fixedAssetsTransferApp.TechnicalReview.ADMINSTRAITIVE_AFFAIRS' | translate}}</option>
+                        <option value="MAINTENANCE">{{'fixedAssetsTransferApp.TechnicalReview.MAINTENANCE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_commentary" for="field_technical_commentary">Technical Commentary</label>
+                    <input type="text" class="form-control" name="technical_commentary" id="field_technical_commentary"
+                        [(ngModel)]="fixedAssets.technical_commentary" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.it_asset_previewer" for="field_it_asset_previewer">It Asset Previewer</label>
+                    <input type="text" class="form-control" name="it_asset_previewer" id="field_it_asset_previewer"
+                        [(ngModel)]="fixedAssets.it_asset_previewer" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.it_asset_previewer_name" for="field_it_asset_previewer_name">It Asset Previewer Name</label>
+                    <input type="text" class="form-control" name="it_asset_previewer_name" id="field_it_asset_previewer_name"
+                        [(ngModel)]="fixedAssets.it_asset_previewer_name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.administraitve_affairs_previewer" for="field_administraitve_affairs_previewer">Administraitve Affairs Previewer</label>
+                    <input type="text" class="form-control" name="administraitve_affairs_previewer" id="field_administraitve_affairs_previewer"
+                        [(ngModel)]="fixedAssets.administraitve_affairs_previewer" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.administraitive_affairs_job_name" for="field_administraitive_affairs_job_name">Administraitive Affairs Job Name</label>
+                    <input type="text" class="form-control" name="administraitive_affairs_job_name" id="field_administraitive_affairs_job_name"
+                        [(ngModel)]="fixedAssets.administraitive_affairs_job_name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_commentry" for="field_technical_maintenance_commentry">Technical Maintenance Commentry</label>
+                    <input type="text" class="form-control" name="technical_maintenance_commentry" id="field_technical_maintenance_commentry"
+                        [(ngModel)]="fixedAssets.technical_maintenance_commentry" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_previewer" for="field_technical_maintenance_previewer">Technical Maintenance Previewer</label>
+                    <input type="text" class="form-control" name="technical_maintenance_previewer" id="field_technical_maintenance_previewer"
+                        [(ngModel)]="fixedAssets.technical_maintenance_previewer" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fixedAssetsTransferApp.fixedAssets.technical_maintenance_job_name" for="field_technical_maintenance_job_name">Technical Maintenance Job Name</label>
+                    <input type="text" class="form-control" name="technical_maintenance_job_name" id="field_technical_maintenance_job_name"
+                        [(ngModel)]="fixedAssets.technical_maintenance_job_name" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+    "fixedAssetsTransferApp": {
+        "AssetActionType" : {
+            "null": "",
+            "DISPOSAL": "DISPOSAL",
+            "RETURN": "RETURN",
+            "SALE": "SALE"
+        }
+    }
+}
